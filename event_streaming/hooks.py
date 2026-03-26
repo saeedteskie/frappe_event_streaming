@@ -110,13 +110,13 @@ app_license = "MIT"
 #         "on_trash": "event_streaming.event_streaming.doctype.event_update_log.event_update_log.notify_consumers"
 #     }
 # }
-
 doc_events = {
     "*": {
-        "after_insert": "event_streaming.events.handle_after_insert",
-        "on_update": "event_streaming.events.handle_on_update",
+        "after_insert": "event_streaming.event_streaming.enqueue_event",
+        "on_update": "event_streaming.event_streaming.enqueue_event",
     }
 }
+``
 
 
 # Scheduled Tasks
